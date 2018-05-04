@@ -1,0 +1,16 @@
+ext {
+    host = [
+            /** ===================== Nexus私服库 ===================== **/
+            /* nexus私服地址 */
+            'nexus_address_releases' : 'http://172.31.0.88:8081/nexus/content/repositories/releases/',
+            'nexus_address_snapshots': 'http://172.31.0.88:8081/nexus/content/repositories/snapshots/',
+    ]
+
+    libVersion = [
+            'android_support_design'     : '26.1.0',
+            'android_support_cardview_v7': '26.1.0',
+            //1.1.60.android
+            'fastjson'                   : "1.2.9"
+    ]
+
+}
