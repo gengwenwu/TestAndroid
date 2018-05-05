@@ -25,5 +25,4 @@ public interface SimpleData {
     User USER_ZHANG_SAN = new User("张三", 22, Arrays.asList(CAR_AUDI_A3, CAR_AUDI_Q5));
     User USER_LI_SI = new User("李四", 33, Arrays.asList(CAR_BMW_X3, CAR_BMW_X6));
 
-
 }
