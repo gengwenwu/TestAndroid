@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import gww.testapp.R;
+import gww.testapp.ui.rxjava2.operators.RxMap;
 import gww.testapp.utils.ToolLog;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -26,10 +27,16 @@ public class Activity_1_SimpleDemo extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1_simple_demo);
-        testSimpleDemo();
-        testScheduler();
+        // testSimpleDemo();
+        // testScheduler();
+
+        /* 操作符 */
+        new RxMap().test();
     }
 
+    /**
+     * 简单例子
+     */
     private void testSimpleDemo() {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
@@ -84,6 +91,9 @@ public class Activity_1_SimpleDemo extends Activity {
         });
     }
 
+    /**
+     * 线程
+     */
     private void testScheduler() {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
@@ -92,7 +102,7 @@ public class Activity_1_SimpleDemo extends Activity {
                 emitter.onNext(1);
                 emitter.onComplete();
             }
-        }).subscribeOn(Schedulers.newThread()) // subscribeOn() 以第一个为准
+        }).subscribeOn(Schedulers.newThread()) // subscribeOn() 以第一个为准，剩下的无效
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread()) // observeOn() 仅影响下面的语句
                 .doOnNext(new Consumer<Integer>() {
