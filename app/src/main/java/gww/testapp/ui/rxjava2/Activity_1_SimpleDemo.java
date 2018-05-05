@@ -9,7 +9,10 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * desc: RxJava2简单例子 <br/>
@@ -24,16 +27,10 @@ public class Activity_1_SimpleDemo extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1_simple_demo);
         testSimpleDemo();
+        testScheduler();
     }
 
     private void testSimpleDemo() {
-        Observable.create(new ObservableOnSubscribe<Integer>() {
-
-            @Override
-            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-
-            }
-        });
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception { // 第一步：初始化Observable
@@ -86,5 +83,31 @@ public class Activity_1_SimpleDemo extends Activity {
             }
         });
     }
+
+    private void testScheduler() {
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+                ToolLog.t("subscribe()");
+                emitter.onNext(1);
+                emitter.onComplete();
+            }
+        }).subscribeOn(Schedulers.newThread()) // subscribeOn() 以第一个为准
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()) // observeOn() 仅影响下面的语句
+                .doOnNext(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        ToolLog.t("doOnNext() -> accept() 1");
+                    }
+                }).observeOn(Schedulers.io()) // observeOn() 仅影响下面的语句
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        ToolLog.t("doOnNext()() -> accept() 2");
+                    }
+                });
+    }
+
 
 }
