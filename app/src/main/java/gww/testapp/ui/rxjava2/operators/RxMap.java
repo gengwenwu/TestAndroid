@@ -1,11 +1,17 @@
 package gww.testapp.ui.rxjava2.operators;
 
+import android.support.annotation.NonNull;
+
+import com.alibaba.fastjson.JSON;
+
 import gww.testapp.utils.ToolLog;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * desc: 对上游发送数据进行对象转换。<br/>
@@ -37,6 +43,42 @@ public class RxMap implements IOperator {
                 ToolLog.t("RxMap -> accept():" + s);
             }
         });
+
+        ToolLog.e("========================");
+
+        Observable.create(new ObservableOnSubscribe<String>() {
+            @Override
+            public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+                ToolLog.t("RxMap -> subscribe()");
+                emitter.onNext("{\"age\":32,\"name\":\"张三\"}");
+            }
+        }).map(new Function<String, User>() {
+            @Override
+            public User apply(@NonNull String response) throws Exception {
+                ToolLog.t("RxMap -> map() -> apply()");
+                return JSON.parseObject(response, User.class);
+            }
+        }).observeOn(AndroidSchedulers.mainThread())
+                .doOnNext(new Consumer<User>() {
+                    @Override
+                    public void accept(User user) throws Exception {
+                        ToolLog.t("RxMap -> doOnNext() -> apply()");
+                    }
+                }).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<User>() {
+                    @Override
+                    public void accept(User user) throws Exception {
+                        ToolLog.t("RxMap -> subscribe() -> apply():" + user);
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                        ToolLog.t("RxMap -> subscribe() -> apply(Throwable):" + throwable.getMessage());
+                    }
+                });
+
     }
+
 
 }
