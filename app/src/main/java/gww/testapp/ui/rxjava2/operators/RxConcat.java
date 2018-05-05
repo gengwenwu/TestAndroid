@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSON;
 import java.util.Random;
 
 import gww.testapp.data.SimpleData;
+import gww.testapp.ui.rxjava2.model.User;
 import gww.testapp.utils.ToolLog;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -15,7 +16,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * desc:不交错的发射两个或多个Observable的发射，
+ * Concat：不交错的发射两个或多个Observable的发射，
  * 只有前一个 Observable 终止(onComplete)后才会订阅下一个 Observable。<br/>
  * time: 2018/5/5 下午13:17 <br/>
  * author: Logan <br/>

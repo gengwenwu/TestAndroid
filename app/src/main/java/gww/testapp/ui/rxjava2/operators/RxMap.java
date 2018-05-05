@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.alibaba.fastjson.JSON;
 
+import gww.testapp.ui.rxjava2.model.User;
 import gww.testapp.utils.ToolLog;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -14,7 +15,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * desc: 对上游发送数据进行对象转换。<br/>
+ * Map：对上游发送数据进行对象转换。<br/>
  * 譬如：采用 map 操作符进行网络数据解析。
  * time: 2018/5/5 下午12:01 <br/>
  * author: Logan <br/>
