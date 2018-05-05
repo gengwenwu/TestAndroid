@@ -39,7 +39,6 @@ public class RxConcat implements IOperator {
 
         ToolLog.e("===============");
 
-
         Observable<String> cache = Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> emitter) throws Exception {
