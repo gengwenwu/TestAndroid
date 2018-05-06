@@ -7,8 +7,16 @@ package gww.testapp.ui.rxjava2.model;
  * since V 1.0 <br/>
  */
 public class Car {
+
+    /**
+     * 汽车的系列名称
+     */
     private String name;
+    /**
+     * 汽车的品牌
+     */
     private String brand;
+
 
     public Car() {
     }
