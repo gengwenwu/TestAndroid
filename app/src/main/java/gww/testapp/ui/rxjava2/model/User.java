@@ -58,4 +58,19 @@ public class User {
         return "name:" + name + ", age:" + age;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof User) {
+            User user = (User) obj;
+            return this.name.equals(user.getName()) && this.age == user.age;
+        }
+
+        return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.name.hashCode() * 31 + age;
+    }
+
 }
