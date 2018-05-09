@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import gww.testapp.R;
-import gww.testapp.ui.rxjava2.operators.RxFlatMap;
+import gww.testapp.ui.rxjava2.operators.RxZip;
 import gww.testapp.utils.ToolLog;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -33,7 +33,8 @@ public class Activity_1_SimpleDemo extends Activity {
         /* 操作符 */
         // new RxMap().test();
         // new RxConcat().test();
-        new RxFlatMap().test();
+        // new RxFlatMap().test();
+        new RxZip().test();
     }
 
     /**
