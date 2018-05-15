@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import gww.testapp.R;
-import gww.testapp.ui.rxjava2.operators.RxDistinct;
+import gww.testapp.ui.rxjava2.operators.RxBuffer;
 import gww.testapp.utils.ToolLog;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -36,8 +36,9 @@ public class Activity_1_SimpleDemo extends Activity {
         // new RxFlatMap().test();
         // new RxZip().test();
         // new RxInterval().test();
-
-        new RxDistinct().test();
+        // new RxDistinct().test();
+        // new RxFilter().test();
+        new RxBuffer().test();
     }
 
     /**

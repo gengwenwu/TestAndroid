@@ -6,7 +6,7 @@ import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
 
 /**
- * RxDistinct: 去重操作符 <br/>
+ * distinct: 去重操作符 <br/>
  * time: 2018/5/9 下午4:09 <br/>
  * author: Logan <br/>
  * since V 1.0 <br/>
@@ -25,7 +25,7 @@ public class RxDistinct implements IOperator {
         });
         */
 
-        // 比较的是对象，需要使用重写对象的equals()、hashCode
+        // 比较的是对象，需要使用重写对象的equals()、hashCode()，否则distinct无效
         Observable.fromArray(new User("张三", 11)
                 , new User("张三", 11), new User("李四", 12))
                 .distinct()
