@@ -9,7 +9,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
 /**
- * desc: 间隔执行操作，默认在新线程，它按固定的时间间隔发射一个无限递增的整数序列。<br/>
+ * desc: 延迟一段时候后，间隔执行操作，默认在新线程，它按固定的时间间隔发射一个无限递增的整数序列。<br/>
  * time: 2018/5/9 下午2:55 <br/>
  * author: Logan <br/>
  * since V 1.0 <br/>
