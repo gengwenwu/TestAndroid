@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import gww.testapp.R;
-import gww.testapp.ui.rxjava2.operators.RxSkip;
+import gww.testapp.ui.rxjava2.operators.RxTake;
 import gww.testapp.utils.ToolLog;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -41,7 +41,8 @@ public class Activity_1_SimpleDemo extends Activity {
         // new RxTimer().test();
         // new RxInterval().test();
         // new RxDoOnNext().test();
-        new RxSkip().test();
+        //new RxSkip().test();
+        new RxTake().test();
 
     }
 
