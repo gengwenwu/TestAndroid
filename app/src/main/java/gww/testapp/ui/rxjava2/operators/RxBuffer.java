@@ -23,13 +23,20 @@ public class RxBuffer implements IOperator {
                     public void accept(List<Integer> integers) throws Exception {
                         StringBuilder sb = new StringBuilder("size:" + integers.size() + ", items:");
 
-
                         for (Integer i : integers) {
                             sb.append(i + ", ");
                         }
 
                         ToolLog.v("RxBuffer -> accept() :" + sb.toString());
                     }
+                });
+
+        ToolLog.v("==================");
+
+        Observable.just(1, 2, 3, 4, 5)
+                .buffer(3)
+                .subscribe(integers -> {
+                    ToolLog.v("RxBuffer -> accept() :" + integers);
                 });
     }
 
