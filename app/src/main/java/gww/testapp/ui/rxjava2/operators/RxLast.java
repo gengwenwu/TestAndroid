@@ -21,7 +21,7 @@ public class RxLast implements IOperator {
 //                        return integer > 3;
 //                    }
 //                })
-                .last(4)
+                .last(4) // 从上游取最后一个数据，无结果默认值是4
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
