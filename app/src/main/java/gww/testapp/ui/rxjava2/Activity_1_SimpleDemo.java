@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import gww.testapp.R;
-import gww.testapp.ui.rxjava2.operators.RxScan;
+import gww.testapp.ui.rxjava2.operators.RxWindow;
 import gww.testapp.utils.ToolLog;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -50,7 +50,8 @@ public class Activity_1_SimpleDemo extends Activity {
         // new RxLast().test();
         // new RxMerge().test();
         // new RxReduce().test();
-        new RxScan().test();
+        // new RxScan().test();
+        new RxWindow().test();
     }
 
     /**
