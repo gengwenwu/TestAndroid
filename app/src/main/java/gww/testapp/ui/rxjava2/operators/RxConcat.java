@@ -18,6 +18,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * Concat：不交错的发射两个或多个Observable的发射，
  * 只有前一个 Observable 终止(onComplete)后才会订阅下一个 Observable。<br/>
+ * 注意它与Merge操作符的区别。
  * time: 2018/5/5 下午13:17 <br/>
  * author: Logan <br/>
  * since V 1.0 <br/>
