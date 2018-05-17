@@ -16,7 +16,7 @@ public class RxTake implements IOperator {
     @Override
     public void test() {
         Flowable.fromArray(1, 2, 3, 4, 5)
-                .take(2)
+                .take(2) // 取前两个
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
@@ -25,7 +25,7 @@ public class RxTake implements IOperator {
                 });
 
         Flowable.fromArray("H", "e", "l", "l", "o")
-                .takeLast(3)
+                .takeLast(3) // 取后3个
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Exception {
