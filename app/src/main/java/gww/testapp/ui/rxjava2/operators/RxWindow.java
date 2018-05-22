@@ -21,6 +21,7 @@ public class RxWindow implements IOperator {
 
     @Override
     public void test() {
+        /* 指定个数发送数据 */
 //        Observable.range(1, 10)
 //                .window(3) // 接收3个数据作为一个窗口，即：Observable<Integer>
 //                .subscribe(new Consumer<Observable<Integer>>() {
@@ -35,6 +36,7 @@ public class RxWindow implements IOperator {
 //                    }
 //                });
 
+        /* 定时发送数据 */
         Observable.interval(1, TimeUnit.SECONDS) //间隔1秒发一次
                 .doOnNext(new Consumer<Long>() {
                     @Override
