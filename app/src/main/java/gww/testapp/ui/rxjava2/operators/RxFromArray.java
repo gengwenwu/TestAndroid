@@ -5,7 +5,7 @@ import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
 
 /**
- * desc: 发射特定数组的Observable <br/>
+ * desc: 遍历数组 <br/>
  * time: 2018/5/23 下午3:44 <br/>
  * author: Logan <br/>
  * since V 1.0 <br/>
