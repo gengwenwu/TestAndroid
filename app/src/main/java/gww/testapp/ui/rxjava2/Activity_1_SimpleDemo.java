@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import gww.testapp.R;
-import gww.testapp.ui.rxjava2.operators.RxRepeat;
+import gww.testapp.ui.rxjava2.operators.RxDelay;
 import gww.testapp.utils.ToolLog;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -53,7 +53,13 @@ public class Activity_1_SimpleDemo extends Activity {
 
         // new RxWindow().test();
 
-        new RxRepeat().test();
+        // new RxRepeat().test();
+        // new RxRange().test();
+        // new RxFromArray().test();
+        // new RxFromIterable().test();
+        // new RxToList().test();
+        new RxDelay().test();
+
     }
 
     /**
