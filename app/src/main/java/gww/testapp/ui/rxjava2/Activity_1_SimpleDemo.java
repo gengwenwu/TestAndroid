@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import gww.testapp.R;
-import gww.testapp.ui.rxjava2.operators.RxCreate;
+import gww.testapp.ui.rxjava2.operators.RxRepeat;
 import gww.testapp.utils.ToolLog;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -26,7 +26,7 @@ public class Activity_1_SimpleDemo extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1_simple_demo);
 
-        new RxCreate().test();
+        // new RxCreate().test();
         // testScheduler();
 
         /* 操作符 */
@@ -52,6 +52,8 @@ public class Activity_1_SimpleDemo extends Activity {
         // new RxScan().test();
 
         // new RxWindow().test();
+
+        new RxRepeat().test();
     }
 
     /**
