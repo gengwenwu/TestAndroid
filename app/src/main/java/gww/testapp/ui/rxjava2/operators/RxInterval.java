@@ -4,12 +4,14 @@ import java.util.concurrent.TimeUnit;
 
 import gww.testapp.utils.ToolLog;
 import io.reactivex.Flowable;
+import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 
 /**
- * desc: 延迟一段时候后，间隔执行操作，默认在新线程，它按固定的时间间隔发射一个无限递增的整数序列。<br/>
+ * desc: 延迟一段时候后(可选)，按固定的时间就产生一个数字，这些数字从0开始，一次递增1直至无穷大，默认在新线程。<br/>
  * time: 2018/5/9 下午2:55 <br/>
  * author: Logan <br/>
  * since V 1.0 <br/>
@@ -40,6 +42,26 @@ public class RxInterval implements IOperator {
                         }
                     }
                 });
+
+//        countdown(5).subscribe(new Consumer<Long>() {
+//            @Override
+//            public void accept(Long aLong) throws Exception {
+//                ToolLog.v("RxInterval -> 倒计时：" + aLong);
+//            }
+//        });
+    }
+
+    /**
+     * 倒计时
+     */
+    private Observable<Long> countdown(final long time) {
+        return Observable.interval(1, TimeUnit.SECONDS)
+                .map(new Function<Long, Long>() {
+                    @Override
+                    public Long apply(Long aLong) throws Exception {
+                        return time - aLong;
+                    }
+                }).take(time + 1);
     }
 
 }
