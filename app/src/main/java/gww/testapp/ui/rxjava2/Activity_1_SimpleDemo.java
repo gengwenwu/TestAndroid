@@ -61,7 +61,8 @@ public class Activity_1_SimpleDemo extends Activity {
         // new RxDelay().test();
 
         // TestBackPressure.testObservable();
-        TestBackPressure.testFlowable();
+        // TestBackPressure.testFlowable();
+        TestBackPressure.TestOnBackpressureLatest();
 
     }
 
