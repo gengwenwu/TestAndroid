@@ -7,7 +7,7 @@ import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
 
 /**
- * Timer: 延迟执行一段时间后执行一段逻辑。<br/>
+ * Timer: 延迟执行一段时间后执行一段逻辑。即：x秒后执行y操作<br/>
  * timer默认在新的线程上执行。
  * time: 2018/5/16 上午11:12 <br/>
  * author: Logan <br/>
