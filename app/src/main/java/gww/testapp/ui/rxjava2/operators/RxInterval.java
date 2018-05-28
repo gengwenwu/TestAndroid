@@ -12,6 +12,7 @@ import io.reactivex.functions.Function;
 
 /**
  * desc: 延迟一段时候后(可选)，按固定的时间就产生一个数字，这些数字从0开始，一次递增1直至无穷大，默认在新线程。<br/>
+ * 即：每隔x秒后执行y操作.
  * time: 2018/5/9 下午2:55 <br/>
  * author: Logan <br/>
  * since V 1.0 <br/>
