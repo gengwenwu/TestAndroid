@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import gww.testapp.R;
-import gww.testapp.ui.rxjava2.scheduler.RxScheduler;
+import gww.testapp.ui.rxjava2.operators.RxThrottleFirst;
 
 /**
  * desc: RxJava2简单例子 <br/>
@@ -20,7 +20,7 @@ public class Activity_1_SimpleDemo extends Activity {
         setContentView(R.layout.activity_1_simple_demo);
 
          /*========== 操作符 ==========*/
-        new RxScheduler().test();
+        // new RxScheduler().test();
 
         /*========== 操作符 ==========*/
         // new RxMap().test();
@@ -50,6 +50,8 @@ public class Activity_1_SimpleDemo extends Activity {
         // new RxFromIterable().test();
         // new RxToList().test();
         // new RxDelay().test();
+
+        new RxThrottleFirst().test();
 
         /*========== 背压 ==========*/
         // TestBackPressure.testObservable();
