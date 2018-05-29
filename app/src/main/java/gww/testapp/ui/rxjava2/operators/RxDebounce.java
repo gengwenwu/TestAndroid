@@ -11,7 +11,8 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * debounce: 对源Observable间隔期产生的结果进行过滤，如果在这个规定的间隔期内没有别的结果产生，则将这个结果提交给订阅者，否则忽略该结果，原理有点像光学防抖。<br/>
+ * debounce: 对源Observable间隔期产生的结果进行过滤，如果在这个规定的间隔期内没有别的结果产生，则将这个结果提交给订阅者，<br/>
+ * 否则忽略该结果，原理有点像光学防抖。<br/>
  * 注意与ThrottleFirst区别。
  * time: 2018/5/17 下午1:47 <br/>
  * author: Logan <br/>
