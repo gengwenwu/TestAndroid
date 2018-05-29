@@ -44,7 +44,8 @@ public class TestBackPressure {
     }
 
     /**
-     * 测试Flowable背压。
+     * 测试Flowable背压。2.x引入，支持背压，缓存128个。<br/>
+     * 超出抛出MissingBackpressureException 异常。<br/>
      */
     public static void testFlowable() {
         Flowable.interval(1, TimeUnit.MILLISECONDS)
@@ -60,8 +61,8 @@ public class TestBackPressure {
     }
 
     /**
-     * 测试 Flowable的onBackpressureDrop() <br/>
-     * 当缓冲区数据满 128 个时候，再新来的数据就会被丢弃，如果此时有数据被消费了，那么就会把当前最新产生的数据，放到缓冲区。<br/>
+     * 测试Flowable onBackpressureDrop() <br/>
+     * 当缓冲区数据满128个时候，再新来的数据就会被丢弃。如果此时有数据被消费了，那么就会把当前最新产生的数据，放到缓冲区。<br/>
      * 简单来说 Drop 就是直接把存不下的事件丢弃。<br/>
      */
     public static void TestOnBackpressureLatest() {
