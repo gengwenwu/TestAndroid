@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import gww.testapp.R;
-import gww.testapp.ui.rxjava2.operators.RxElement;
+import gww.testapp.ui.rxjava2.operators.base.RxSingle;
 
 /**
  * desc: RxJava2简单例子 <br/>
@@ -21,7 +21,7 @@ public class Activity_1_SimpleDemo extends Activity {
 
         /*========== 其它 ==========*/
         // new RxCreate().test();
-        // new RxSingle().test();
+        new RxSingle().test();
 
          /*========== 操作符 ==========*/
         // new RxScheduler().test();
@@ -56,13 +56,12 @@ public class Activity_1_SimpleDemo extends Activity {
         // new RxDelay().test();
 
         // new RxThrottleFirst().test();
-        new RxElement().test();
+        // new RxElement().test();
 
         /*========== 背压 ==========*/
         // TestBackPressure.testObservable();
         // TestBackPressure.testFlowable();
         // TestBackPressure.TestOnBackpressureLatest();
-
 
 
     }
