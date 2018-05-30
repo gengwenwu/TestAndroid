@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
 /**
- * desc: 能够发射0或n个数据，并以成功或错误事件终止。Rx2.0之后不支持背压。<br/>
+ * Observable: 能够发射0或n个数据，并以成功或错误事件终止，Rx2.0之后不支持背压。<br/>
  * time: 2018/5/30 下午2:09 <br/>
  * author: Logan <br/>
  * since V 1.0 <br/>
