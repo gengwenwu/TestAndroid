@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import gww.testapp.R;
-import gww.testapp.ui.rxjava2.operators.base.RxSingle;
+import gww.testapp.ui.rxjava2.operators.base.RxObservable;
 
 /**
  * desc: RxJava2简单例子 <br/>
@@ -21,7 +21,8 @@ public class Activity_1_SimpleDemo extends Activity {
 
         /*========== 其它 ==========*/
         // new RxCreate().test();
-        new RxSingle().test();
+        new RxObservable().test();
+        // new RxSingle().test();
 
          /*========== 操作符 ==========*/
         // new RxScheduler().test();
