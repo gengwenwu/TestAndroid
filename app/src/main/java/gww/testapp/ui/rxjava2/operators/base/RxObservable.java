@@ -17,6 +17,29 @@ public class RxObservable implements IOperator {
 
     @Override
     public void test() {
+        // TODO
+        // Observable.combineLatest XX()
+        // Observable.concat XX()
+        // Observable.from XX()
+        // Observable.create()
+        // Observable.defer()
+        // Observable.empty()
+        // Observable.generate()
+        // Observable.error()
+        // Observable.interval()
+        // Observable.just()
+        // Observable.merge()
+        // Observable.never()
+        // Observable.range()
+        // Observable.sequenceEqual()
+        // Observable.switchOnNext()
+        // Observable.timer()
+        // Observable.using()
+        // Observable.wrap()
+        // Observable.zip()
+        // Observable.unsafeCreate()
+
+
         Observable.fromArray(1, 2, 3)
                 .subscribe(new Consumer<Integer>() {
                     @Override

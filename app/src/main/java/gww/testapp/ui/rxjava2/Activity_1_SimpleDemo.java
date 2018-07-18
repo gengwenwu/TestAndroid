@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import gww.testapp.R;
-import gww.testapp.ui.rxjava2.operators.base.RxObservable;
+import gww.testapp.ui.rxjava2.operators.base.RxCompletable;
 
 /**
  * desc: RxJava2简单例子 <br/>
@@ -19,12 +19,20 @@ public class Activity_1_SimpleDemo extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1_simple_demo);
 
-        /*========== 其它 ==========*/
+        /*========== Rx2.x 基础类 ==========*/
         // new RxCreate().test();
-        new RxObservable().test();
+        // new RxObservable().test();
         // new RxSingle().test();
 
-         /*========== 操作符 ==========*/
+        //RxFlowable.testFlowable();
+        //RxFlowable.testObservable(); //背压
+        //RxFlowable.TestOnBackpressureLatest(); //背压
+
+        /* Completabl 例子 */
+        RxCompletable.testCompletable();
+        RxCompletable.testAndThen();
+
+        /*========== 操作符 ==========*/
         // new RxScheduler().test();
 
         /*========== 操作符 ==========*/
@@ -58,11 +66,6 @@ public class Activity_1_SimpleDemo extends Activity {
 
         // new RxThrottleFirst().test();
         // new RxElement().test();
-
-        /*========== 背压 ==========*/
-        // TestBackPressure.testObservable();
-        // TestBackPressure.testFlowable();
-        // TestBackPressure.TestOnBackpressureLatest();
 
 
     }

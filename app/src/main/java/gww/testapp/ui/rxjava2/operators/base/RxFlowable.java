@@ -1,4 +1,4 @@
-package gww.testapp.ui.rxjava2.backpressure;
+package gww.testapp.ui.rxjava2.operators.base;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,39 +9,15 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**
+ * Flowable：能够发射0或n个数据，并以成功或错误事件终止。支持Backpressure，可以控制数据源发射的速度。<br/>
  * 背压产生的原因： 被观察者发送消息太快以至于它的操作符或者订阅者不能及时处理相关的消息。<br/>
  * 在RxJava2里，引入了Flowable这个类，Observable不包含BackPressure处理，而Flowable包含（默认128个）<br/>
+ * 参考链接：https://blog.csdn.net/fengluoye2012/article/details/79297186
  * time: 2018/5/24 下午7:00 <br/>
  * author: Logan <br/>
  * since V 1.0 <br/>
  */
-public class TestBackPressure {
-
-    /**
-     * 测试Observable背压 <br/>
-     * 2.x 版本中 Observable 不再支持背压，发射器生成的数据全部缓存在内存中。<br/>
-     * 1, 不支持 backpressure 处理，不会发生 MissingBackpressureException 异常。<br/>
-     * 2, 所有没有处理的数据都缓存在内存中，等待被订阅者处理。<br/>
-     * 3, 坏处是：当产生的数据过快，内存中缓存的数据越来越多，占用大量内存。<br/>
-     */
-    public static void testObservable() {
-        Observable.interval(1, TimeUnit.MILLISECONDS)
-                .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.newThread())
-                .doOnNext(new Consumer<Long>() {
-                    @Override
-                    public void accept(Long aLong) throws Exception {
-                        ToolLog.t("TestBackPressure -> testObservable() accept1:" + aLong + " ============");
-                    }
-                })
-                .subscribe(new Consumer<Long>() {
-                    @Override
-                    public void accept(Long aLong) throws Exception {
-                        ToolLog.t("TestBackPressure -> testObservable() sleep1:" + aLong);
-                        Thread.sleep(1000);
-                    }
-                });
-    }
+public class RxFlowable {
 
     /**
      * 测试Flowable背压。2.x引入，支持背压，缓存128个。<br/>
@@ -78,6 +54,32 @@ public class TestBackPressure {
                     public void accept(Long aLong) throws Exception {
                         ToolLog.t("TestBackPressure -> TestOnBackpressureLatest() sleep3:" + aLong);
                         Thread.sleep(100);
+                    }
+                });
+    }
+
+    /**
+     * 测试Observable背压 <br/>
+     * 2.x 版本中 Observable 不再支持背压，发射器生成的数据全部缓存在内存中。<br/>
+     * 1, 不支持 backpressure 处理，不会发生 MissingBackpressureException 异常。<br/>
+     * 2, 所有没有处理的数据都缓存在内存中，等待被订阅者处理。<br/>
+     * 3, 坏处是：当产生的数据过快，内存中缓存的数据越来越多，占用大量内存。<br/>
+     */
+    public static void testObservable() {
+        Observable.interval(1, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.newThread())
+                .doOnNext(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        ToolLog.t("TestBackPressure -> testObservable() accept1:" + aLong + " ============");
+                    }
+                })
+                .subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        ToolLog.t("TestBackPressure -> testObservable() sleep1:" + aLong);
+                        Thread.sleep(1000);
                     }
                 });
     }

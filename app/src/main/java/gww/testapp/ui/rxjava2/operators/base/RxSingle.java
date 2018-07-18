@@ -9,7 +9,7 @@ import io.reactivex.SingleOnSubscribe;
 import io.reactivex.disposables.Disposable;
 
 /**
- * Single: 类似于Observable，是Observable一种变种。Rx2.X 引入。<br/>
+ * Single: 只发射单个数据或错误事件。类似于Observable，是Observable一种变种。Rx2.X 引入。<br/>
  * 不同的是，它总是只发射一个值或者一个错误通知，而不是发射一系列的值。 <br/>
  * 因此，不同于Observable需要三个方法onNext, onError, onCompleted，订阅Single只需要两个方法：<br/>
  * 1, onSuccess(): 发射单个的值到这个方法。<br/>
