@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import gww.testapp.R;
-import gww.testapp.ui.rxjava2.operators.base.RxCompletable;
+import gww.testapp.ui.rxjava2.operators.base.RxMaybe;
 
 /**
  * desc: RxJava2简单例子 <br/>
@@ -20,17 +20,25 @@ public class Activity_1_SimpleDemo extends Activity {
         setContentView(R.layout.activity_1_simple_demo);
 
         /*========== Rx2.x 基础类 ==========*/
+        /* Observable 例子 */
         // new RxCreate().test();
         // new RxObservable().test();
+
+        /* Single 例子 */
         // new RxSingle().test();
 
+        /* Flowable 例子 */
         //RxFlowable.testFlowable();
         //RxFlowable.testObservable(); //背压
         //RxFlowable.TestOnBackpressureLatest(); //背压
 
         /* Completabl 例子 */
-        RxCompletable.testCompletable();
-        RxCompletable.testAndThen();
+        // RxCompletable.testCompletable();
+        // RxCompletable.testAndThen();
+
+        /*  Maybe例子 */
+        RxMaybe.testMaybe();
+        RxMaybe.testMaybe2();
 
         /*========== 操作符 ==========*/
         // new RxScheduler().test();
