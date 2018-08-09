@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import gww.testapp.R;
-import gww.testapp.ui.rxjava2.operators.base.RxMaybe;
+import gww.testapp.ui.rxjava2.operators.RxCompose;
 
 /**
  * desc: RxJava2简单例子 <br/>
@@ -37,10 +37,10 @@ public class Activity_1_SimpleDemo extends Activity {
         // RxCompletable.testAndThen();
 
         /*  Maybe例子 */
-        RxMaybe.testMaybe();
-        RxMaybe.testMaybe2();
+        // RxMaybe.testMaybe();
+        // RxMaybe.testMaybe2();
 
-        /*========== 操作符 ==========*/
+        /*========== 线程切换 ==========*/
         // new RxScheduler().test();
 
         /*========== 操作符 ==========*/
@@ -74,6 +74,7 @@ public class Activity_1_SimpleDemo extends Activity {
 
         // new RxThrottleFirst().test();
         // new RxElement().test();
+        new RxCompose().test();
 
 
     }
