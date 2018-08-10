@@ -9,6 +9,7 @@ import io.reactivex.functions.Consumer;
 
 /**
  * Maybe：能够发射0或者1个数据，要么成功，要么失败。有点类似于Optional。<br/>
+ * Maybe 是Single和Observable两种的结合体。
  * Maybe 转换成Observable、Flowable、Single，只需相应地调用toObservable()、toFlowable()、toSingle()。
  * time: 2018/7/18 下午2:35 <br/>
  * author: Logan <br/>

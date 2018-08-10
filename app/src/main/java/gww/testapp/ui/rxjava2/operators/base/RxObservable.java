@@ -39,6 +39,11 @@ public class RxObservable implements IOperator {
         // Observable.zip()
         // Observable.unsafeCreate()
 
+        // publish
+        // share
+        // connect
+        // refCount
+
 
         Observable.fromArray(1, 2, 3)
                 .subscribe(new Consumer<Integer>() {

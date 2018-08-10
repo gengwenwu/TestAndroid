@@ -10,7 +10,7 @@ import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
 
 /**
- * Completable: 从来不发射数据，只处理 onComplete 和 onError 事件。可以看成是Rx的Runnable。<br/>
+ * Completable: 从来不发射数据，只处理 onComplete 和 onError 事件。侧重于观察结果。可以看成是Rx的Runnable。<br/>
  * 同时 Completable 并没有map、flatMap等操作符，它的操作符比起 Observable/Flowable 要少得多。<br/>
  * time: 2018/7/18 下午1:42 <br/>
  * author: Logan <br/>
