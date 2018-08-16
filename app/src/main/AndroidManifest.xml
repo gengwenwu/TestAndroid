@@ -24,7 +24,7 @@
         <activity android:name=".ui.ActivityB"/>
         <activity android:name=".ui.ActivityC"/>
         <activity android:name=".ui.lambda.ActivityLambda"/>
-        <activity android:name=".ui.rxjava2.Activity_1_SimpleDemo"/>
+        <activity android:name=".ui.rxjava2.ActivityRxJava2"/>
     </application>
 
 </manifest>

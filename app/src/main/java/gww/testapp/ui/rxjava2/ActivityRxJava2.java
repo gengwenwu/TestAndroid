@@ -12,7 +12,7 @@ import gww.testapp.ui.rxjava2.operators.RxCompose;
  * author: Logan <br/>
  * since V 1.0 <br/>
  */
-public class Activity_1_SimpleDemo extends Activity {
+public class ActivityRxJava2 extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
