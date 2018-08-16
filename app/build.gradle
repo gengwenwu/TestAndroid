@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.1'
+    compileSdkVersion 27
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         applicationId "gww.testapp"
@@ -46,10 +46,15 @@ repositories {
 dependencies {
 
     compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    // support 库
+    compile "com.android.support:design:$rootProject.libVersion.androd_support_default"
+    compile "com.android.support:cardview-v7:$rootProject.libVersion.androd_support_default"
+    compile "com.android.support:support-annotations:$rootProject.libVersion.androd_support_default"
+
+    //
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
-    compile "com.android.support:design:$rootProject.libVersion.android_support_design"
-    compile "com.android.support:cardview-v7:$rootProject.libVersion.android_support_cardview_v7"
     compile "com.alibaba:fastjson:$rootProject.libVersion.fastjson"
 
     // RxJava

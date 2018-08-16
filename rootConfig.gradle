@@ -7,8 +7,7 @@ ext {
     ]
 
     libVersion = [
-            'android_support_design'     : '26.1.0',
-            'android_support_cardview_v7': '26.1.0',
+            'androd_support_default'     : "27.1.1",
             //1.1.60.android
             'fastjson'                   : "1.2.9"
     ]
