@@ -43,7 +43,7 @@ public class ActivityLambda extends Activity {
                     .mapToInt(integer -> integer)
                     .max()
                     .getAsInt();
-            ToolLog.e("Max Numbver：" + max1);
+            ToolLog.e("Max Number：" + max1);
 
 //            // 官方
 //            int max2 = java.util.stream.Stream.of(1, 2, 3)
