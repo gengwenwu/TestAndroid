@@ -13,11 +13,11 @@ public class Client {
 
     public void test() {
         setColor(RangeConst.RED);
-        // setColor(100); //报错，值不存在
+        //setColor(100); //报错，值不存在
 
 
         setRank(RangeConst.Rank.HIGH);
-        // setRank(1); //报错，1值是正确，但是还是爆红
+        //setRank(1); //报错，1值是正确，但是还是爆红
 
         setBonusState(RangeConst.BonusState.USED);
         // setBonusState("used"); //报错，used值是正确，但是还是爆红
