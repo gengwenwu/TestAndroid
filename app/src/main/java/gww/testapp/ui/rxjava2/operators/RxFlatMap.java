@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import gww.testapp.data.SimpleData;
+import gww.testapp.data.SampleData;
 import gww.testapp.ui.rxjava2.model.Car;
 import gww.testapp.ui.rxjava2.model.User;
 import gww.testapp.utils.ToolLog;
@@ -34,9 +34,9 @@ public class RxFlatMap implements IOperator {
             @Override
             public void subscribe(ObservableEmitter<User> emitter) throws Exception {
                 ToolLog.v("RxFlatMap -> subscribe() 张三");
-                emitter.onNext(SimpleData.USER_ZHANG_SAN);
+                emitter.onNext(SampleData.USER_ZHANG_SAN);
                 ToolLog.v("RxFlatMap -> subscribe() 李四");
-                emitter.onNext(SimpleData.USER_LI_SI);
+                emitter.onNext(SampleData.USER_LI_SI);
             }
         }).flatMap(new Function<User, ObservableSource<Car>>() {
             @Override
