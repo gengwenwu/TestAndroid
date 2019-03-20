@@ -30,6 +30,11 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn_rxjava2_simple_demo).setOnClickListener(v -> {
             startActivity(new Intent(this, ActivityRxJava2.class));
         });
+
+        findViewById(R.id.btn_retrofit).setOnClickListener(v -> {
+            startActivity(new Intent(this, ActivityRxJava2.class));
+        });
+
     }
 
 

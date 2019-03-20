@@ -25,6 +25,7 @@
         <activity android:name=".ui.ActivityC"/>
         <activity android:name=".ui.lambda.ActivityLambda"/>
         <activity android:name=".ui.rxjava2.ActivityRxJava2"/>
+        <activity android:name=".ui.retrofit.ActivityRetrofit"/>
     </application>
 
 </manifest>
