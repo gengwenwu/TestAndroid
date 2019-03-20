@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import gww.testapp.R;
 import gww.testapp.ui.lambda.ActivityLambda;
+import gww.testapp.ui.retrofit.ActivityRetrofit;
 import gww.testapp.ui.rxjava2.ActivityRxJava2;
 
 public class MainActivity extends Activity {
@@ -32,7 +33,7 @@ public class MainActivity extends Activity {
         });
 
         findViewById(R.id.btn_retrofit).setOnClickListener(v -> {
-            startActivity(new Intent(this, ActivityRxJava2.class));
+            startActivity(new Intent(this, ActivityRetrofit.class));
         });
 
     }
